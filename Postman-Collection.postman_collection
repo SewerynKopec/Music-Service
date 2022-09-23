@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "92dc0f06-95da-45e2-893f-9ce73b9aeb66",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20705895"
+	},
+	"item": [
+		{
+			"name": "SONG",
+			"item": [
+				{
+					"name": "All",
+					"item": [
+						{
+							"name": "get songs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/songs?size=3&page=2",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"songs"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "3"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add a song",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/songs",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"songs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "get a song",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/songs/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"songs",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a song",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Everlong\",\r\n    \"author\": \"Foo fighters\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/songs/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"songs",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a song",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/songs/8",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"songs",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "All",
+					"item": [
+						{
+							"name": "Get users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"123123\",\r\n    \"surname\": \"321321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "Get a user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "If-None-Match",
+										"value": "5",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:5000/users/3",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "If-Match",
+										"value": "4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jakub\",\r\n    \"surname\": \"Kowal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users/3",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/4",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PLAYLIST",
+			"item": [
+				{
+					"name": "All",
+					"item": [
+						{
+							"name": "Get user's playlists",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/1/playlists",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add a playlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"playlist2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users/2/playlists",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"2",
+										"playlists"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "Get a playlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/1/playlists/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change playlists name",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"My playlist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users/1/playlists/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a playlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/1/playlists/3",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Merges",
+			"item": [
+				{
+					"name": "Merge two playlists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2\",\r\n    \"to\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users/1/playlists/merges",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"1",
+								"playlists",
+								"merges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all my merges",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2\",\r\n    \"to\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users/1/playlists/merges",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"1",
+								"playlists",
+								"merges"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlists' songs",
+			"item": [
+				{
+					"name": "All",
+					"item": [
+						{
+							"name": "Get songs from a playlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/user/<uid>/playlists/<pid>/songs",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"<uid>",
+										"playlists",
+										"<pid>",
+										"songs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add songs to a playlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"song_id\": \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users/1/playlists/1/songs",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists",
+										"1",
+										"songs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "Remove songs from a playlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/1/playlists/1/songs/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1",
+										"playlists",
+										"1",
+										"songs",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get playlist's song",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users/1/playlists/1/songs/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"1",
+								"playlists",
+								"1",
+								"songs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
